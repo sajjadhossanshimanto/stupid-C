@@ -15,8 +15,8 @@ int main(){
     int arr4[5] = {1, 2};
     // printf("%d", arr4[3]);// default value for undefined pos is set to zero
 
-    int arr5[5] = {1};
-    printf("%d", arr5[3]);
+    int arr5[5] = {1};// only 1st value will be set
+    printf("%d", arr5[3]);// 
 
     return 0;
 }
