@@ -1,16 +1,16 @@
 # include <stdio.h>
+# include <math.h>
 
 int main(){
     int n;
-
     scanf("%d", &n);
 
-    int i=0, sum=0, t=0;
+    int sum=0, t=0;
     do{
         scanf("%d", &t);
         sum+=t;
-        i++;
-    }while(i<n && getchar()!="\n");
+        n--;
+    }while(0<n && getchar()!="\n");
 
-    printf("%d", sum);
+    printf("%d", abs(sum));
 }
