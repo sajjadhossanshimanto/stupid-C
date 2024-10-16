@@ -5,7 +5,7 @@ int main(){
     int a, b, c;
     scanf("%d %d %d", &a, &b, &c);
 
-    if(a<b && a<c){
+    if(a<=b && a<=c){
         printf("%d\n", a);
         if(b<c){
             printf("%d\n", b);
@@ -15,7 +15,7 @@ int main(){
             printf("%d\n", b);
         }
     }
-    else if(b<a && b<c){
+    else if(b<=a && b<=c){
         printf("%d\n", b);
         if(a<c){
             printf("%d\n", a);
