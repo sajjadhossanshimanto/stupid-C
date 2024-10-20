@@ -2,15 +2,15 @@
 
 
 int main(){
-    int n;
-    scanf("%d", &n);
+    long long int n;
+    scanf("%lld", &n);
 
     // no need of loop
     if(n>0){
-        printf("%d", ((n+1)*n)/2);
+        printf("%lld", ((n+1)*n)/2);
     }else{
         n = -n;
-        printf("%d", -((n+1)*n)/2);
+        printf("%lld", -((n+1)*n)/2);
     }
 
 
