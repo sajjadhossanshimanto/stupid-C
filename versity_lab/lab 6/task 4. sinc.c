@@ -5,11 +5,11 @@ float pi = 3.1416;
 
 
 float sinc(float x){
-    // float rad = x*M_PI/180;
+    float rad = x*pi/180;
     if (x == 0) {
         return 1.0;
     }
-    return sin((x*pi))/(pi*x);
+    return sin((rad*pi))/(pi*rad);
 }
 
 int main(){
@@ -22,7 +22,7 @@ int main(){
 
     printf("21 values of sinc in between (%.2f-%.2f) is ", a, b);
     for (float i = a; i <= b; i += step_size) {
-        printf("%.6f ", sinc(i));
+        printf("%f -> %.6f \n",i, sinc(i));
     }
 
     return 0;
