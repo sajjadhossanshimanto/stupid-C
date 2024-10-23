@@ -26,7 +26,10 @@ int main(){
     char a[10]="hello";
     char b[10]=" world";
 
-    printf("%s", concert(a, b));
+    printf("%s\n", concert(a, b));
+    printf("%s\n", strcat(a, b));
+    printf("%s\n", b);
+    printf("%s\n", a);// a  is changed
     
     return 0;
 }
