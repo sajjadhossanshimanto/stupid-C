@@ -11,6 +11,9 @@ int main(){
     } else{
         cout << "even" << endl;
     }
+
+    // tarnary -> (condition) ? True : False
+    x%2==1 ? cout << "odd": cout << "even" << endl;
     
     return 0;
 }
