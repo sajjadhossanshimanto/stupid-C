@@ -8,7 +8,7 @@ class Student{
     int roll;
     char section;// a, b, c
     double gpa;
-};
+}; // don't forget
 
 int main(){
     Student a, b;
