@@ -19,6 +19,9 @@ class Student{
 Student func(){
     Student karim(17, 'a', 4.00);
     return karim;
+    // normally static variable return korle pawa jay na
+    // kintu static object pawa jay
+    // this object is static because there is no new kw
 }
 
 int main(){
