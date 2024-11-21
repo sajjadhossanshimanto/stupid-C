@@ -17,5 +17,9 @@ int main(){
     sort(arr, arr+n);// end point is excludive
     print_arr(n, arr);
 
+    //               comperator
+    sort(arr, arr+n, greater<int>());
+    print_arr(n, arr);
+
     return 0;
 }
