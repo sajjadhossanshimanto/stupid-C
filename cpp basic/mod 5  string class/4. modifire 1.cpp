@@ -18,6 +18,9 @@ int main(){
     // strings are mutable-flexible
     s[0] = 'G';
     cout << s << endl;
+    // s = "hi";
+    s.assign("hi"); // not used as function
+    cout << s << endl;
     
     return 0;
 }
