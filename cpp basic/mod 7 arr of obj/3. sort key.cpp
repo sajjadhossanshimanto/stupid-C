@@ -9,10 +9,11 @@ class Student{
 };
 
 bool cmp(Student l, Student r){
-    if (l.roll<r.roll){
-        return true;
-    }
-    return false;
+    // if (l.roll<r.roll){
+    //     return true;
+    // }
+    // return false;
+    return l.roll<r.roll;
 }
 
 int main(){
