@@ -4,6 +4,7 @@
 
 int main(){
     char s[100];
+    printf("enter a string: ");
     fgets(s, 100, stdin);
 
 
