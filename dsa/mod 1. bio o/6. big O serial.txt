@@ -1,0 +1,6 @@
+1. Constant:        O(1)
+2. Logarithmic:     O(logN)
+3. square root:     O(sqrt(N))
+4. Linear:          O(N)
+5. Linearrithmic:   O(NlogN)
+6. quadratic:       O(N^2)
