@@ -23,7 +23,11 @@ void print_linklist(Node* head){
 
 void insert_back(Node* &head, int val){
     Node* newnode = new Node(val);
-    
+    if (head==NULL){
+        head = newnode;
+        return ;
+    }
+
     Node* tail = head;
     while (tail->next!=NULL){
         tail = tail->next;
