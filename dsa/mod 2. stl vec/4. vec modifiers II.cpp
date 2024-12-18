@@ -27,5 +27,6 @@ int main(){
     else{
         cout << "found";
     }
+    cout << *it << endl;//prints the given nuumber
     return 0;
 }
