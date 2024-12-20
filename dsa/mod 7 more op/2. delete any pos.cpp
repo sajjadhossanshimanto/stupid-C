@@ -48,7 +48,7 @@ void delete_at_pos(Node* &head, int pos){
     }
     Node* parent = head;
     for(int i=0; i<pos-1; i++){
-        parent = head->next;
+        parent = parent->next;
     }
     
     Node* del = parent->next ;
