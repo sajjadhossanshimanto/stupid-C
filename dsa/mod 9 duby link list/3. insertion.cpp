@@ -52,6 +52,20 @@ void insert_tail(Node* &tail, int val){
     tail = node;
 }
 
+void insert_middle(Node* &head, int pos, int val){
+    Node* new_node = new Node(val);
+
+    Node* node = head;// node at the pos
+    for(int i=0; i<pos; i++){
+        node = node->next;
+    }
+
+    new_node->next = node;
+    new_node->prev = node->prev;
+    node->prev->next = new_node;
+    node->prev = new_node;
+}
+
 int main(){
     Node* head = new Node(10);
     Node* a = new Node(20);
@@ -76,6 +90,9 @@ int main(){
     print_forward(head);
 
     insert_tail(tail, 500);
+    print_forward(head);
+
+    insert_middle(head, 2, 200);
     print_forward(head);
     
     return 0;
