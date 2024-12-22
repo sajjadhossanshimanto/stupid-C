@@ -43,6 +43,10 @@ void insert_head(Node* &head, int val){
 
 void insert_tail(Node* &tail, int val){
     Node* node = new Node(val);
+    if (tail==NULL){
+        tail = node;// TODO: head = new_node
+        return;
+    }
     node->prev = tail;
     tail->next = node;
     tail = node;
