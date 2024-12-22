@@ -37,6 +37,7 @@ void print_backward(Node* tail){
 void insert_head(Node* &head, int val){
     Node* node = new Node(val);
     node->next = head;
+    head->prev = node;
     head = node;
 }
 
