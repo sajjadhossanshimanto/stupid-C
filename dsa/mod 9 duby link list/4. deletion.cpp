@@ -46,6 +46,16 @@ void delete_head(Node* &head, Node* &tail){
     }
 }
 
+void delete_tail(Node* &head, Node* &tail){
+    Node* temp = tail;
+    tail = tail->prev;
+    tail->next = NULL;
+
+    delete temp;
+    if (tail==NULL){
+        head = NULL;
+    }
+}
 
 int main(){
     
@@ -72,7 +82,11 @@ int main(){
     print_forward(head);
     print_backward(tail);
 
-    delete_head(head, tail);
+    // delete_head(head, tail);
+    // print_forward(head);
+    // print_backward(tail);
+
+    delete_tail(head, tail);
     print_forward(head);
     print_backward(tail);
 
