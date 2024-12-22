@@ -66,7 +66,27 @@ void insert_middle(Node* &head, int pos, int val){
     node->prev = new_node;
 }
 
+
+int ln[] = {0};
+void insert_at_any_pos(Node* &head, Node* &tail, int pos, int val){
+    if (pos==0){
+        insert_head(head, val);
+        if (tail==NULL){
+            tail = head;
+        }
+    }
+    else if (pos==ln[0]){
+        insert_tail(tail, val);
+    }
+    else{
+        insert_middle(head, pos, val);
+        // can obtimise if needed to insert from the tail
+    }
+    ln[0]++;
+}
+
 int main(){
+    
     Node* head = new Node(10);
     Node* a = new Node(20);
     Node* b = new Node(30);
