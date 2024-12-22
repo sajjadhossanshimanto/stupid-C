@@ -57,6 +57,17 @@ void delete_tail(Node* &head, Node* &tail){
     }
 }
 
+void delete_any_pos(Node* &head, Node* &tail, int pos){
+    Node* node = head; // node at position
+    for (int i=0; i<pos; i++){
+        node = node->next;
+    }
+
+    node->prev->next = node->next;
+    node->next->prev = node->prev;
+    delete node;
+}
+
 int main(){
     
     Node* head = new Node(10);
@@ -83,10 +94,10 @@ int main(){
     print_backward(tail);
 
     // delete_head(head, tail);
-    // print_forward(head);
-    // print_backward(tail);
+    // delete_tail(head, tail);
+    delete_any_pos(head, tail, 2);
 
-    delete_tail(head, tail);
+
     print_forward(head);
     print_backward(tail);
 
