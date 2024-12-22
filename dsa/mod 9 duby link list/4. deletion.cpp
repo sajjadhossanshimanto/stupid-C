@@ -35,12 +35,15 @@ void print_backward(Node* tail){
 }
 
 
-void delete_head(Node* &head){
+void delete_head(Node* &head, Node* &tail){
     Node* temp = head;
     head->next->prev = NULL;// TODO: cummon mistake
     head = head->next;
 
     delete temp;
+    if (head==NULL){
+        tail = NULL;
+    }
 }
 
 
@@ -69,7 +72,7 @@ int main(){
     print_forward(head);
     print_backward(tail);
 
-    delete_head(head);
+    delete_head(head, tail);
     print_forward(head);
     print_backward(tail);
 
