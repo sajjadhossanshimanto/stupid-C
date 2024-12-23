@@ -3,8 +3,12 @@ using namespace std;
 
 
 void print_list(list<int> l){
-    for (auto i = l.begin(); i!=l.end(); i++){
-        cout << *i << " ";
+    // for (auto i = l.begin(); i!=l.end(); i++){
+    //     cout << *i << " ";
+    // }
+
+    for (auto i: l){
+        cout << i << " ";
     }
     cout << endl;
 }
