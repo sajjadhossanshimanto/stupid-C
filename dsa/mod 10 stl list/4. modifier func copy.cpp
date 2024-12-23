@@ -29,13 +29,35 @@ int main(){
     cout << *next(l.begin(), 2) << endl;
     
     // insert -> single value
-    l.insert(next(l.begin(), 2), -1);
+    l.insert(next(l.begin(), 2), -1);// O(N)
     print_list(l);
 
     // inseert series of data
     vector<int> arr = {-2,-3, -4};
     l.insert(next(l.begin(), 3), arr.begin(), arr.end());
     print_list(l);
+
+
+    // erase -> single value
+    l.erase(next(l.begin(), 2));
+    print_list(l);
+
+    // erase -> multiple value
+    l.erase(next(l.begin(), 2), next(l.begin(), 4)); // end point exclusive
+    print_list(l);
+
+
+    // replace 
+    replace(l.begin(), l.end(), -4, 0);
+    print_list(l);
+
+    auto it = find(l.begin(), l.end(), 0);
+    if (it==l.end()){
+        cout << "Zero not found" << endl;
+    }
+    else{
+        cout << "Zero exists in the list" << endl;
+    }
 
     return 0;
 }
