@@ -37,13 +37,19 @@ void insert_back(Node* &tail, int val){
 void reverse(Node* &head, Node* &tail, Node* cursor){
     if (cursor->next==NULL){ // loop until end point
         head = cursor;
+        tail = cursor;
         return;
     }
 
     reverse(head, tail, cursor->next);
-    cursor->next->next = cursor;
-    cursor->next = NULL;
+    // cursor->next->next = cursor;
+    // cursor->next = NULL;
+    // tail = cursor; 
+
+    // tail pointer stais at the previous node
+    tail->next = cursor;
     tail = cursor;
+    tail->next = NULL;// for setting the last tail to null
 }
 
 int main(){
