@@ -13,7 +13,8 @@ class MyStack{
         v.pop_back();
     }
     int top(){
-        return *v.end();
+        // return *(v.end()-1);
+        return v.back();
     }
     int size(){
         return v.size();
