@@ -1,0 +1,1 @@
+// use 2 pointer to reverse an array
