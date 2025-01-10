@@ -47,31 +47,39 @@ class Doubly{
     }
 
     void pop_back(){
-        Node* temp = tail;
-        tail = tail->prev;
-        tail->next = NULL;
+        if (tail == NULL) return;
 
-        delete temp;
-        if (tail==NULL){
+        Node* temp = tail;
+        if (tail->prev != NULL) {
+            tail = tail->prev;
+            tail->next = NULL;
+        } else {
+            // Single node case
             head = NULL;
+            tail = NULL;
         }
-        this->len--;
+        delete temp;
+        len--;
     }
 
     void pop_front(){
+        if (head == NULL) return;
+        
         Node* temp = head;
-        head->next->prev = NULL;// TODO: cummon mistake
-        head = head->next;
-
-        delete temp;
-        if (head==NULL){
+        if (head->next != NULL) {
+            head = head->next;
+            head->prev = NULL;
+        } else {
+            // Single node case
+            head = NULL;
             tail = NULL;
         }
-        this->len--;
+        delete temp;
+        len--;
     }
 
     bool empty(){
-        return !(this->len>0);
+        return len == 0;
     }
 
     int front(){
