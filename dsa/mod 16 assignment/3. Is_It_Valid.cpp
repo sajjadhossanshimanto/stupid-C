@@ -7,15 +7,15 @@ int main(){
     cin >>q;
     while (q--){
         string x;
-        vector<int> v;
+        stack<int> v;
         cin >> x;
 
         for (auto i: x){
-            if (v.empty() || i==v.back()){
-                v.push_back(i);
+            if (v.empty() || i==v.top()){
+                v.push(i);
             }
             else{
-                v.pop_back();
+                v.pop();
             }
         }
 
