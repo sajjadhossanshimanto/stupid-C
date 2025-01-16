@@ -48,21 +48,26 @@ Node* input_tree(){
     return root;
 }
 
-int tree_sum(Node* node){
+void dfs(Node* node, vector<int>* leaf){
+    if (node==NULL) return ;
     if (node->left==NULL && node->right==NULL){
-        return 0;
+        leaf->push_back(node->val);
+        return ;
     }
-    
-    int l=0, r=0;
-    if (node->left) l = tree_sum(node->left);
-    if (node->right) r = tree_sum(node->right);
 
-    return node->val + l + r;
+    dfs(node->left, leaf);
+    dfs(node->right, leaf);
 }
 
 int main(){
+    vector<int> v;
     Node* root = input_tree();
-    cout << tree_sum(root) << endl;
+    
+    dfs(root, &v);
+    sort(v.begin(), v.end(), greater<int>());
+    for (auto i:v){
+        cout << i << " ";
+    }
 
     return 0;
 }
