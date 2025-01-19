@@ -66,3 +66,28 @@ int main(){
     cout << search(root, val);
     return 0;
 }
+/*
+complexity of search ?
+
+binary search in array is Oder of logn. as each time we are srinking our search area to half
+but in binary search tree. it is not not mendatorily that our search area will srin too half.
+it totally depnds upon tree structure. like
+               10
+             /    \
+            /      \
+           /        \
+          6          23
+           \        / \
+            9     19  29
+           /      /    \
+          7     12     35
+from root 10 if we go to the right 23. our area is not reduced by half.
+as there are less nodes in let side.
+
+the same way our in worse case our complexity may be O(n). if we have a linear tree
+
+to the best ans to the question is -> O(h) [h->height of tree]
+if our tree is a complete binar tree then height -> log(n)
+thus the time complexity is O(logn)
+
+*/
