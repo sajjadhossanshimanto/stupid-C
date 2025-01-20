@@ -15,7 +15,20 @@ class Node{
     }
 };
 
+void level_oder(Node* root){
+    queue<Node*> q;
+    q.push(root);
 
+    while (!q.empty()){
+        Node* f = q.front();
+        q.pop();
+
+        cout << f->val << " ";
+        if (f->left) q.push(f->left);//if condition dite vul hoy
+        if (f->right) q.push(f->right);
+    }
+    cout << endl;
+}
 
 int main(){
     Node* root = new Node(10);
