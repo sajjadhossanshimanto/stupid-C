@@ -105,3 +105,12 @@ int main(){
 
     return 0;
 }
+/*
+oder of inseertion -> O(h): height of tree
+never ever directly say O(logn)
+
+O(h) for single inseertion.
+for n node insertion -> O(nh)
+    - in may become O(nlogn)
+    - or O(n^2) in worse case
+*/
