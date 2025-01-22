@@ -50,3 +50,15 @@ int main(){
     
     return 0;
 }
+/*
+complexity:
+at max the loop in insertion occures height of tree times
+tc -> O(h)  but
+here tree is always a complete tree. so h is always log(n)
+tc -> O(logn) for a single value
+
+for n nodes insertion -> Nlon(n)
+
+insertion in heap is actually very bad as in array or vector insertion of a single value is O(1)
+but heap has its own best use case.
+*/
