@@ -3,7 +3,7 @@ using namespace std;
 
 
 int main(){
-    priority_queue<int, vector<int>, greater<int>> pq;
+    priority_queue<long long int, vector<long long int>, greater<long long int>> pq;
 
     int n;
     cin >> n;
@@ -21,10 +21,7 @@ int main(){
             int val;
             cin >> val;
             pq.push(val);
-            if (!pq.empty())
-                cout << pq.top() << endl;
-            else
-                cout << "Empty" << endl;
+            cout << pq.top() << endl;
         }
         else if (op==1){
             if (!pq.empty())
@@ -33,9 +30,13 @@ int main(){
                 cout << "Empty" << endl;
         }
         else if (op==2){
-            pq.pop();
-            if (!pq.empty())
-                cout << pq.top() << endl;
+            if (!pq.empty()){
+                pq.pop();
+                if (!pq.empty())
+                    cout << pq.top() << endl;
+                else
+                    cout << "Empty" << endl;
+            }
             else
                 cout << "Empty" << endl;
         }
