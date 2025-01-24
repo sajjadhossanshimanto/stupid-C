@@ -11,31 +11,29 @@ int main(){
         getline(cin, s);
 
         stringstream ss(s);
-
         map<string, int> counter;
-        map<string, int> index;
-        int c=0;
         while(ss>>word){
             counter[word]+=1;
-            if (!index.count(word)){
-                index[word] = c;
-            }
-            c++;
         }
 
-        pair<string, int> maximum = {"", 0};
+        int maximum = 0;
         for (auto it = counter.begin(); it!=counter.end(); it++){
-            if (it->second == maximum.second){
-                if (index[it->first] < index[maximum.first]){
-                    maximum = make_pair(it->first, it->second);
-                }
-            }
-            else if (it->second > maximum.second){
-                maximum = make_pair(it->first, it->second);
+            if (it->second > maximum){
+                maximum = it->second;
             }
         }
 
-        cout << maximum.first << " " << maximum.second << endl;
+        counter.clear();
+        ss.str("");
+        ss.clear();
+        ss << s;
+        while(ss>>word){
+            counter[word]+=1;
+            if (counter[word]==maximum){
+                cout << word << " " << maximum << endl;
+                break;
+            }
+        }
     }
     
     return 0;
