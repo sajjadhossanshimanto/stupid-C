@@ -9,7 +9,7 @@ best use cases
 
 # adjacency list
 - when i need to know all the nodes that are connected to a crtain node
-- 
+- easily count how many nodes are connected
 
 
 # edge list 
