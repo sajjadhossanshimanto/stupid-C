@@ -50,6 +50,7 @@ int main(){
         graph[a].push_back(b);
         graph[b].push_back(a);
     }
+    memset(vis, false, sizeof(vis));
 
     int src, dst;
     cin >> src;
