@@ -23,7 +23,7 @@ bool is_valid(int x, int y){
 
 void dfs(int x, int y){
     cout << x << " " << y << endl;
-    vis[x][y] = true;
+    vis[x][y] = true;// this same chaeck canbe done before dfs call
 
     for (auto i: movement){
         int cx = x+i.first;
