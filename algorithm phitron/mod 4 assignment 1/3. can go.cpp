@@ -33,6 +33,7 @@ int main(){
             }
         }
     }
+    memset(vis, false, sizeof(vis));// don't forget
     
     if (dfs(srcx, srcy)){
         cout << "YES";
