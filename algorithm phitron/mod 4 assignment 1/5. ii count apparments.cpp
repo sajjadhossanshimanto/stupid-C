@@ -43,9 +43,15 @@ int main(){
         }
     }
     
-    sort(count.begin(), count.end());
-    for (int i: count){
-        cout << i << " ";
+    if (count.empty()){
+        cout << 0;
     }
+    else{
+        sort(count.begin(), count.end());
+        for (int i: count){
+            cout << i << " ";
+        }
+    }
+    
     return 0;
 }
