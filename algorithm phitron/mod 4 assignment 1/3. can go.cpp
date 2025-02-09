@@ -14,7 +14,7 @@ bool dfs(int x, int y){
     for (auto i : movement){
         int cx = x+i.first;
         int cy = y+i.second;
-        if (cx<0 || cy<0 || cx>=m || cy>=n || vis[cx][cy]) continue;
+        if (cx<0 || cy<0 || cx>=m || cy>=n || vis[cx][cy] || graph[cx][cy]=='#') continue;
 
         if (dfs(cx, cy)) return true;
     }
@@ -23,23 +23,22 @@ bool dfs(int x, int y){
 
 int main(){
     cin >> m>>n;
+    int srcx, srcy;
     for (int i=0; i<m; i++){
         for (int j=0; j<n; j++){
             cin >> graph[i][j];
-        }
-    }
-
-    for (int i=0; i<m; i++){
-        for (int j=0; j<n; j++){
             if (graph[i][j]=='A'){
-                if (dfs(i, j)){
-                    cout << "YES";
-                }
-                return 0;
+                srcx = i;
+                srcy = j;
             }
         }
     }
     
-    cout << "NO";
+    if (dfs(srcx, srcy)){
+        cout << "YES";
+    }
+    else
+        cout << "NO";
+    
     return 0;
 }
