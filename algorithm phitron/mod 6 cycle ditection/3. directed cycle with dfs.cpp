@@ -41,7 +41,7 @@ int main(){
         int a, b;
         cin >> a >> b;
         graph[a].push_back(b);
-        graph[b].push_back(a);
+        // graph[b].push_back(a);
     }
 
     // default values
@@ -55,6 +55,7 @@ int main(){
     for (int i=0; i<n; i++){
         if (!vis[i]){
             cycle = false;
+            cout << "dfs at " << i << endl;
             dfs_cycle(i);
             cout << cycle << " ";
         }
