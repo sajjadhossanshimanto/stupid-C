@@ -26,7 +26,7 @@ bool bfs_cycle(int node){
         q.pop();
 
         for (int i: graph[node]){
-            if (vis[i] && i!=parent[i]){
+            if (vis[i] && i!=parent[node]){
                 // we can't just return without flaging all the other nnodes in the cycle
                 cycle = true;
             }
