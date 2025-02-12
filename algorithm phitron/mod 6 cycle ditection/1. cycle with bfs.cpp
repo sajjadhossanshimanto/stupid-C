@@ -20,13 +20,15 @@ bool bfs_cycle(int node){
     q.push(node);
     vis[node] = true;
 
+    bool cycle = false;
     while (!q.empty()){
         node = q.front();
         q.pop();
 
         for (int i: graph[node]){
             if (vis[i] && i!=parent[i]){
-                return true;
+                // we can't just return without flaging all the other nnodes in the cycle
+                cycle = true;
             }
             if (vis[i]) continue;
             vis[i] = true;
@@ -36,7 +38,7 @@ bool bfs_cycle(int node){
         }
     }
 
-    return false;
+    return cycle;
 }
 
 int main(){
@@ -53,10 +55,11 @@ int main(){
     // default values
     memset(vis, false, sizeof(vis));
 
+    cout << endl;
     // for different connected component
     for (int i=0; i<n; i++){
         if (!vis[i]){
-            cout << bfs_cycle(i);
+            cout << bfs_cycle(i)<< " ";
         }
     }
     
