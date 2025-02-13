@@ -1,3 +1,16 @@
+/*
+time complexity:
+
+tc of normal dijkstra is O(v*E)
+    the outer loop with run at max v nodes
+    with each node considering E edges.
+
+tc of opbisied dijktra is O(V+E)
+    - but for every V there is heap pop operation of -> logn where n is size of queue that is V
+    - avain for each edge loop there is heap push operation of log(V)
+    - so O( V*logV + E*logV) or O( (V+E)logV )
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 #define inf (INT_MAX)
