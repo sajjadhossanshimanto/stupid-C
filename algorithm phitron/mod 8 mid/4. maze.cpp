@@ -6,31 +6,46 @@ const int max_n = 1000+1;
 
 char grid[max_n][max_n];
 bool vis[max_n][max_n];
+pair<int, int> parent[max_n][max_n];
 //                                  right    left      up     down
-vector<pair<int, int>> movement = {{0, -1}, {0, 1}, {-1, 0}, {1, 0}};
+vector<pair<int, int>> movement = {{0, 1}, {0, -1}, {-1, 0}, {1, 0}};
 
 int n,m;
-bool dfs(int x, int y){
-    if (grid[x][y]=='D') return true;
-    grid[x][y] = 'X';
+void bfs(int x, int y){
+    queue<pair<int, int>> q;
+    q.push({x, y});
+    vis[x][y] = true;
 
-    for (auto i: movement){
-        int cx = x+i.first;
-        int cy = y+i.second;
-        if (cx<0 || cx>=n || cy<0 || cy>=m || grid[cx][cy]=='X' || grid[cx][cy]=='#') continue;
+    while(!q.empty()){
+        x = q.front().first;
+        y = q.front().second;
+        q.pop();
+        // if (x==dstx && y==dsty) return ;
 
-        if (dfs(cx, cy)) return true;
-    }
+        for (auto i: movement){
+            int cx = x+i.first;
+            int cy = y+i.second;
+            if (cx<0 || cx>=n || cy<0 || cy>=m || vis[cx][cy] || grid[cx][cy]=='#') continue;
+            vis[cx][cy] = true;
     
-    grid[x][y] = '.';
-    return false;
+            parent[cx][cy] = {x, y};
+            q.push({cx, cy});
+        }
+    }
 }
 
 int main(){
     memset(vis, false, sizeof(vis));
+    // memset(parent, {-1, -1}, sizeof(parent));// will for work
+    for (int x=0; x<n; x++){
+        for (int y=0; y<m; y++){
+            parent[x][y] = {-1, -1};
+        }
+    }
+
     // input
     cin >> n >> m;
-    int srcx, srcy;
+    int srcx, srcy, dstx, dsty;
 
     for (int x=0; x<n; x++){
         for (int y=0; y<m; y++){
@@ -39,19 +54,37 @@ int main(){
                 srcx = x;
                 srcy = y;
             }
+            else if (grid[x][y]=='D'){
+                dstx = x;
+                dsty = y;
+            }
 
         }
     }
 
-    dfs(srcx, srcy);
-    grid[srcx][srcy] = 'R';
-    
+    // logic
+    bfs(srcx, srcy);
+
+    // back tracking
+    if (vis[dstx][dsty]){
+        dstx = parent[dstx][dsty].first;
+        dsty = parent[dstx][dsty].second;// to preserve the D
+        
+        while (grid[dstx][dsty]!='R'){
+            grid[dstx][dsty] = 'X';
+            dstx = parent[dstx][dsty].first;
+            dsty = parent[dstx][dsty].second;
+        }
+    }
+
+    // print
     cout << endl;
     for (int x=0; x<n; x++){
         for (int y=0; y<m; y++){
             cout << grid[x][y];
         }
         cout << endl;
-    } 
+    }
+
     return 0;
 }
