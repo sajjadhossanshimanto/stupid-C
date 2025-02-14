@@ -68,19 +68,20 @@ int main(){
 
     // back tracking
     if (vis[dstx][dsty]){
-        dstx = parent[dstx][dsty].first;
-        dsty = parent[dstx][dsty].second;// to preserve the D
-        
-        while (grid[dstx][dsty]!='R'){
-            grid[dstx][dsty] = 'X';
-            pair<int, int> prev = parent[dstx][dsty];// main bug was here
-            dstx = prev.first;
-            dsty = prev.second;
+        int curx = dstx;
+        int cury = dsty;
+
+        while (grid[curx][cury]!='R'){
+            grid[curx][cury] = 'X';
+            pair<int, int> prev = parent[curx][cury];// main bug was here
+            curx = prev.first;
+            cury = prev.second;
         }
+        grid[dstx][dsty]='D';
     }
 
     // print
-    cout << endl;
+    // cout << endl;
     for (int x=0; x<n; x++){
         for (int y=0; y<m; y++){
             cout << grid[x][y];
