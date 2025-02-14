@@ -20,6 +20,7 @@ void bfs(int x, int y){
         x = q.front().first;
         y = q.front().second;
         q.pop();
+        // not necissary. there no way to over write parent list as every node is marked as visited before adding to queue
         // if (x==dstx && y==dsty) return ;
 
         for (auto i: movement){
@@ -42,7 +43,7 @@ int main(){
             parent[x][y] = {-1, -1};
         }
     }
-
+    
     // input
     cin >> n >> m;
     int srcx, srcy, dstx, dsty;
@@ -72,8 +73,9 @@ int main(){
         
         while (grid[dstx][dsty]!='R'){
             grid[dstx][dsty] = 'X';
-            dstx = parent[dstx][dsty].first;
-            dsty = parent[dstx][dsty].second;
+            pair<int, int> prev = parent[dstx][dsty];// main bug was here
+            dstx = prev.first;
+            dsty = prev.second;
         }
     }
 
