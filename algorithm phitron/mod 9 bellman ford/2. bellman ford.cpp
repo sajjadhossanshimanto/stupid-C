@@ -32,3 +32,11 @@ int main(){
     }
     return 0;
 }
+
+/* time complexity: O(n*e)
+    - where n is the number of vertices and e is the number of edges
+
+    - the outer loop runs n-1 times and
+    - the inner loop runs exactly e times regardless of any condition
+
+*/
