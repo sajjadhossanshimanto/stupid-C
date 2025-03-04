@@ -34,3 +34,9 @@ int main(){
 
     return 0;
 }
+/*
+time compleity:
+normal find -> O(n) both for loop & recurtion implementiation.
+
+with obtimisation -> O(nlogn)
+*/
