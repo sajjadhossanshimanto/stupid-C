@@ -15,7 +15,7 @@ int main(){
         edges.push_back({u, v, w});
     }
     
-    int src=0;// we can take this as user input
+    int src=1;// we can take this as user input
     dist[src] = 0;
 
     
@@ -31,6 +31,20 @@ int main(){
         }
     }
 
+    bool cycle = false;
+    for (auto edge : edges){
+        int u = edge[0];
+        int v = edge[1];
+        int w = edge[2];
+        if(dist[u] != INT_MAX && dist[u] + w < dist[v]){// infinte check is important
+            cycle = true;
+            break;
+        }
+    }
+
+    if (cycle){
+        cout << "negative weight cycle ditected" << endl;
+    }
 
     // output
     for (int i=0; i<n+1; i++){
