@@ -45,18 +45,27 @@ int main(){
         }
     }
 
-    // print the distace matrix
-    for (int i=0; i<n; i++){
-        for (int j=0; j<n; j++){
-            if (adj_mat[i][j]==INT_MAX){
-                cout << "inf" << " ";
-            }
-            else{
-                cout << adj_mat[i][j] << " ";
-            }
-        }
-        cout << endl;
+    // // print the distace matrix
+    // for (int i=0; i<n; i++){
+    //     for (int j=0; j<n; j++){
+    //         if (adj_mat[i][j]==INT_MAX){
+    //             cout << "inf" << " ";
+    //         }
+    //         else{
+    //             cout << adj_mat[i][j] << " ";
+    //         }
+    //     }
+    //     cout << endl;
+    // }
+
+    int q;
+    cin >> q;
+    while (q--){
+        int a, b;
+        cin >> a >> b;
+        cout << adj_mat[a][b] << endl;
     }
+
     return 0;
 }
 /*
