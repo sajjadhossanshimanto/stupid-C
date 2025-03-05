@@ -28,7 +28,10 @@ int main(){
     long long int a, b, w;
     while (e--){
         cin >> a >> b >> w;
-        adj_mat[a][b] = w;
+        if (w<adj_mat[a][b]){
+            // there can be multiple edges between 2 nodes -> spacified in the question
+            adj_mat[a][b] = w;
+        }
     }
 
     // algo -> floyed warshell
