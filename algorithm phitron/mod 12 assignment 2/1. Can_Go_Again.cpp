@@ -8,7 +8,7 @@ int main(){
     int n, e;
     cin >> n >> e;
     vector<vector<long long int>> graph;
-    vector<long long int> dist(n+1, INT_MAX);// n+1 because n should be accessable
+    vector<long long int> dist(n+1, LONG_LONG_MAX);// n+1 because n should be accessable
 
     long long int a, b, w;
     while (e--){
@@ -26,7 +26,7 @@ int main(){
             long long int a = eg[0];
             long long int b = eg[1];
             long long int w = eg[2];
-            if (dist[a] != INT_MAX && dist[a] + w < dist[b]){
+            if (dist[a] != LONG_LONG_MAX && dist[a] + w < dist[b]){
                 dist[b] = dist[a] + w;
             }
         }
@@ -38,7 +38,7 @@ int main(){
         a = eg[0];
         b = eg[1];
         w = eg[2];
-        if (dist[a] != INT_MAX && dist[a] + w < dist[b]){
+        if (dist[a] != LONG_LONG_MAX && dist[a] + w < dist[b]){
             cycle = true;
             break;
         }
@@ -51,7 +51,7 @@ int main(){
     cin >> t;
     while (t--){
         cin >> dst;
-        if (dist[dst]==INT_MAX){
+        if (dist[dst]==LONG_LONG_MAX){
             cout << "Not Possible" << endl;
         }
         else if (!cycle){
