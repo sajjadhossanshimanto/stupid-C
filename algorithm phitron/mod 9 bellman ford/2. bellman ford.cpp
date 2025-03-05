@@ -30,6 +30,13 @@ int main(){
             }
         }
     }
+
+
+    // output
+    for (int i=0; i<n+1; i++){
+        cout << dist[i] << " ";
+    }
+
     return 0;
 }
 
