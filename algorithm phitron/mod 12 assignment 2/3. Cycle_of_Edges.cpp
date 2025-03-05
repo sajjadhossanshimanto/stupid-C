@@ -17,7 +17,8 @@ bool ds_union(int a, int b){
     int par_b = find(b);
 
     if (par_a==par_b) return true;
-    parent[a] = b;// unconditional
+    
+    parent[par_a] = par_b;// unconditional
     return false;
 }
 
