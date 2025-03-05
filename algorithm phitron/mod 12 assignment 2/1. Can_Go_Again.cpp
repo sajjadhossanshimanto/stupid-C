@@ -45,6 +45,7 @@ int main(){
     }
     if (cycle){
         cout << "Negative Cycle Detected" << endl;
+        return 0;
     }
 
     long long int t, dst;
@@ -54,7 +55,7 @@ int main(){
         if (dist[dst]==LONG_LONG_MAX){
             cout << "Not Possible" << endl;
         }
-        else if (!cycle){
+        else {
             cout << dist[dst] << endl;
         }
     }
