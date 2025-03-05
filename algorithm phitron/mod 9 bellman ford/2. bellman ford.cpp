@@ -6,7 +6,7 @@ int main(){
     int n, e;
     cin >> n >> e;
     vector<vector<int>> edges;
-    vector<int> dist(n, INT_MAX);
+    vector<int> dist(n+1, INT_MAX);// n should be accessable
 
     // input edges
     for(int i = 0; i < e; i++){
