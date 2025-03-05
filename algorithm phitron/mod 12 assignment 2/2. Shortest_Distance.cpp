@@ -12,9 +12,9 @@ int main(){
     cin >> n >> e;
 
     // setup default vaues
-    long long int adj_mat[n][n];
-    for (int i=0; i<n; i++){
-        for (int j=0; j<n; j++){
+    long long int adj_mat[n+1][n+1]; // n must be accessable
+    for (int i=1; i<=n; i++){
+        for (int j=1; j<=n; j++){
             if (i==j){
                 adj_mat[i][j] = 0;
             }
@@ -32,9 +32,9 @@ int main(){
     }
 
     // algo -> floyed warshell
-    for (int k=0; k<n; k++){
-        for (int i=0; i<n; i++){
-            for (int j=0; j<n; j++){
+    for (int k=1; k<=n; k++){
+        for (int i=1; i<=n; i++){
+            for (int j=1; j<=n; j++){
                 if (adj_mat[i][k]+adj_mat[k][j] < adj_mat[i][j] && adj_mat[i][k]!=inf && adj_mat[k][j]!=inf){
                     adj_mat[i][j] = adj_mat[i][k]+adj_mat[k][j];
                 }
