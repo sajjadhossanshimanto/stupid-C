@@ -31,3 +31,6 @@ int main(){
     
     return 0;
 }
+/*
+time complexity is 2^n
+*/
