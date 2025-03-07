@@ -1,11 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int cache[100005];
 
 bool solve(int n){
     if (n==1) return true;
-    if ((n-1)%3==0) return true;
-    if (n%2==0) return true;
+    if (n<=0) return false;
+
+    if (solve(n-3)) return true;
+    if ((n&1)==0 && solve(n/2)) return true;
 
     return false;
 }
