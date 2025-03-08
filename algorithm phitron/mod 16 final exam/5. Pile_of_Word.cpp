@@ -16,6 +16,7 @@ int main(){
     while (t--){
         string s1, s2;
         map<char, int> fs1, fs2;
+        cin >> s1 >> s2;
 
         frequency(s1, fs1);
         frequency(s2, fs2);
