@@ -7,9 +7,8 @@ int weight[maxn], val[maxn];
 int cache[maxn][maxn];
 
 int knap(int cur, int left_weight){
+    if (cur<0 || left_weight<=0) return 0;// boundery checks must be before any king of indexing
     if (cache[cur][left_weight]!=-1) return cache[cur][left_weight];
-
-    if (cur<0 || left_weight<=0) return 0;
 
     // take or not take
     int take = 0;

@@ -20,9 +20,13 @@ void print_array(int n, int* arr){
 
 int cache[maxn][maxn];
 int knap(int cur, int left_weight){
-    if (cache[cur][left_weight]!=-1) return cache[cur][left_weight];
-
     if (cur<0) return 0;
+
+    if (cache[cur][left_weight]!=-1) {
+        // cout << "returned " << cache[cur][left_weight] << endl;
+        return cache[cur][left_weight];
+    }
+
 
     int take = 0;
     if (weight[cur]<=left_weight){
