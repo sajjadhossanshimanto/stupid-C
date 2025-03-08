@@ -26,14 +26,12 @@ int main(){
         frequency(s1, fs1);
         frequency(s2, fs2);
 
-        for (auto it = fs1.begin(); it!=fs1.end(); it++){
-            if (fs2[(*it).first] != (*it).second){
-                cout << "NO" << endl;
-                continue;
-            }
+        // print_map(fs1);
+        if (fs1 == fs2) {
+            cout << "YES" << endl;
+        } else {
+            cout << "NO" << endl;
         }
-        cout << "YES" << endl;
-
     }
     
     return 0;
