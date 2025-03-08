@@ -2,10 +2,12 @@
 using namespace std;
 
 
-void frequency(string s1, map<string, int> &fs1){
-    for (int i=0; i<(int)s1.size(); i++){
-        fs1[s1[i]] += 1;
+void frequency(string s, map<char, int> &freq_map) {
+    for (char ch : s) {
+        freq_map[ch]++;
     }
+}
+
 }
 
 int main(){
