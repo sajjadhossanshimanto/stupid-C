@@ -8,6 +8,11 @@ void frequency(string s, map<char, int> &freq_map) {
     }
 }
 
+void print_map(const map<char, int> &freq_map) {
+    for (const auto &pair : freq_map) {
+        cout << pair.first << " -> " << pair.second << endl;
+    }
+    cout << endl;
 }
 
 int main(){
